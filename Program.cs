@@ -20,8 +20,8 @@ namespace CSC205Quiz1Part6
                 // Loop for each row of the tree
                 for (int i = height; i >= 1; i--)
                 {
-                    // Print spaces before asterisks
-                    for (int j = 0; j < height - i; j++)
+                    // Print spaces before asterisks to center the tree
+                    for (int j = 0; j < (width - (2 * i - 1)) / 2; j++)
                     {
                         Console.Write(" ");
                     }
