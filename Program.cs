@@ -10,18 +10,20 @@ namespace CSC205Quiz1Part6
     {
         static void Main(string[] args)
         {
-            int width = 9; // Width of each tree (adjust as needed)
-            int height = 5; // Height of each tree (adjust as needed)
-            int numTrees = 3; // Number of trees to repeat
+            int height = 7;  // Height of each tree (adjust as needed)
+            int numTrees = 3;  // Number of trees to repeat
 
             // Loop for each tree
             for (int tree = 0; tree < numTrees; tree++)
             {
+                // Calculate the width based on the current height
+                int width = 2 * height - 1;
+
                 // Loop for each row of the tree
-                for (int i = height; i >= 1; i--)
+                for (int i = 0; i < height; i++)
                 {
                     // Calculate the number of leading spaces to center the tree
-                    int spacesBefore = (width - (2 * i - 1)) / 2;
+                    int spacesBefore = height - i - 1;
 
                     // Print leading spaces
                     for (int j = 0; j < spacesBefore; j++)
@@ -30,12 +32,18 @@ namespace CSC205Quiz1Part6
                     }
 
                     // Print asterisks for the current row
-                    for (int k = 0; k < 2 * i - 1; k++)
+                    for (int k = 0; k < 2 * i + 1; k++)
                     {
                         Console.Write("*");
                     }
 
                     // Move to the next line after each row
+                    Console.WriteLine();
+                }
+
+                // Ensure separation between trees
+                if (tree < numTrees - 1)
+                {
                     Console.WriteLine();
                 }
             }
